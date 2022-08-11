@@ -2,5 +2,8 @@
 
 ![SolarEdge logo](docs/images/SolarEdge_logo.png)
 
-Python scripts using the [SolarEdge](https://www.solaredge.com) Cloud-Based Monitoring Platform API to access solar panel data.
+Python scripts using the [SolarEdge](https://www.solaredge.com)
+[Cloud-Based Monitoring Platform API](https://www.solaredge.com/sites/default/files/se_monitoring_api.pdf)
+to access solar panel data.
 
+Looking for a library providing wrapper to the SolarEdge API? May be this https://github.com/bertouttier/solaredge.
