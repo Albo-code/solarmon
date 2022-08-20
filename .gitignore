@@ -130,3 +130,7 @@ dmypy.json
 
 # IDE
 .vscode
+
+# solarmon
+site_api_key.yaml
+data/*.json
