@@ -8,3 +8,7 @@ to access solar panel data.
 
 Looking for a library providing wrapper to the SolarEdge API? May be this
 https://github.com/bertouttier/solaredge will work for you.
+
+[Documentation](https://albo-code.github.io/solarmon/index.html)
+
+![](https://github.com/Albo-code/solarmon/workflows/docs/badge.svg)
