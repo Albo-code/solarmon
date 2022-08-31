@@ -1,10 +1,9 @@
+#!/usr/bin/env python3
 '''
-Use the SolarEdge Monitoring API ``energy`` command to get engery generation data.
+Use the SolarEdge Monitoring API ``energy`` command to get energy generation data.
 '''
 
 # Standard imports
-import os
-import traceback
 from typing import Tuple
 
 # Third-party imports
@@ -12,8 +11,16 @@ import plac
 import requests
 import yaml
 
+
 def load_site_api_data(file_name: str = 'site_api_key.yaml') -> Tuple[str, str]:
     '''
+    Load the site information data required in SolarEdge API calls.
+
+    :param file_name: Name of `.yaml` file containg site information.
+    :type file_name: str
+
+    :return: Tuple containg **site id** and **api key**.
+    :rtype: Tuple[str, str]
     '''
     site_api_data = {}
     with open(file_name, "r") as stream:
@@ -31,9 +38,23 @@ def load_site_api_data(file_name: str = 'site_api_key.yaml') -> Tuple[str, str]:
 
 
 def get_energy_data(site_id: str, api_key: str,
-                    start_date: str, end_date: str, time_unit):
+                    start_date: str, end_date: str, time_unit) -> None:
     '''
+    Get energy data from the SolarEdge server using Python `requests` call to
+    send the SolarEdge API `energy` command.
+
+    :param site_id: Value of *site id* to be used in server request.
+    :type site_id: str
+    :param api_key: Value of *api key* to be used in server request.
+    :type api_key: str
+    :param start_date: Value of `energy` command's *start date*.
+    :type start_date: str
+    :param end_date: Value of `energy` command's *end date*.
+    :type end_date: str
+    :param time_unit: Value of `energy` command's *time unit*.
+    :type time_unit: str
     '''
+
     api_cmd= "energy?"
     url = f"https://monitoringapi.solaredge.com/site/{site_id}/{api_cmd}"
 
@@ -49,6 +70,7 @@ def get_energy_data(site_id: str, api_key: str,
     with open(data_file_name, "w") as data_file:
         data_file.write(response.text)
     print(f"Energy data written to '{data_file_name}'")
+# end get_energy_data
 
 
 @plac.pos('start_date', "Start date, e.g. '2021-08-01'", type=str)
@@ -57,25 +79,19 @@ def get_energy_data(site_id: str, api_key: str,
           "'DAY', 'WEEK', 'MONTH', or 'YEAR'", type=str,
           choices=['QUARTER_OF_AN_HOUR', 'HOUR', 'DAY', 'WEEK', 'MONTH', 'YEAR'])
 @plac.opt('site_data', "Name of .yaml file containing site data", type=str)
-def main(start_date: str, end_date: str, time_unit: str = 'QUARTER_OF_AN_HOUR',
+def __main(start_date: str, end_date: str, time_unit: str = 'QUARTER_OF_AN_HOUR',
          site_data: str = 'site_api_key.yaml') -> None:
-    '''
-    Call the SolarEdge Monitoring API `energy` command to get engery generation
+    """
+    Call the SolarEdge Monitoring API `energy` command to get energy generation
     data and store in `.json` file.
-    '''
+    """
     site_id, api_key = load_site_api_data(site_data)
 
     get_energy_data(site_id, api_key, start_date, end_date, time_unit)
-
-
 # end main()
 
+
 if __name__ == '__main__':
-    try:
-        plac.call(main)
-    except Exception as main_exc:
-        print("Exception executing " + os.path.basename(__file__) +
-              f" main() Exception: {main_exc}")
-        print(traceback.format_exc())
+    plac.call(__main)
 
 # end-of-file

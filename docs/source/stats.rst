@@ -1,15 +1,14 @@
-energy
-======
+stats
+=====
 
 Usage
 -----
 
-.. program-output:: ../../energy.py -h
+.. program-output:: ../../stats.py -h
 
 Function descriptions
 ---------------------
 
-.. automodule:: energy
+.. automodule:: stats
    :members:
    :undoc-members:
-
