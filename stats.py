@@ -63,8 +63,8 @@ def time_unit_stats_day(df: pd.DataFrame, time_unit: str, energy_unit: str) -> N
 @plac.pos('data_file', ".json file containing energy data", type=str)
 def __main(data_file: str) -> None:
     '''
-    Read engery data from supplied `.json` file (created using :mod:`energy`
-    script) and output various statistics.
+    Read engery data from supplied `.json` file (created using `energy` script)
+    and output various statistics.
     '''
 
     json_df = pd.read_json(data_file)
