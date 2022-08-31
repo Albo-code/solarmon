@@ -76,10 +76,23 @@
 <h1>energy<a class="headerlink" href="#energy" title="Permalink to this heading"></a></h1>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;/home/runner/work/solarmon/solarmon/docs/source/../../energy.py&quot;, line 12, in &lt;module&gt;
-    import yaml
-ModuleNotFoundError: No module named &#39;yaml&#39;
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>usage: energy.py [-h] [-t QUARTER_OF_AN_HOUR] [-s site_api_key.yaml]
+                 start_date end_date
+
+Call the SolarEdge Monitoring API `energy` command to get energy generation
+data and store in `.json` file.
+
+positional arguments:
+  start_date            Start date, e.g. &#39;2021-08-01&#39;
+  end_date              End date, e.g. &#39;2021-08-31&#39;
+
+options:
+  -h, --help            show this help message and exit
+  -t QUARTER_OF_AN_HOUR, --time-unit QUARTER_OF_AN_HOUR
+                        Time unit, one of &#39;QUARTER_OF_AN_HOUR&#39;, &#39;HOUR&#39;, &#39;DAY&#39;,
+                        &#39;WEEK&#39;, &#39;MONTH&#39;, or &#39;YEAR&#39;
+  -s site_api_key.yaml, --site-data site_api_key.yaml
+                        Name of .yaml file containing site data
 </pre></div>
 </div>
 </section>
@@ -136,7 +149,7 @@ send the SolarEdge API <cite>energy</cite> command.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2022, Albo-code.
-      <span class="lastupdated">Last updated on Wednesday 31 Aug 2022 at 21:23:57.
+      <span class="lastupdated">Last updated on Wednesday 31 Aug 2022 at 21:36:08.
       </span></p>
   </div>
 
