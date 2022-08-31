@@ -42,7 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="energy.html">energy</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">stats</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#function-descriptions">Function descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-stats">Function descriptions</a></li>
 </ul>
 </li>
 </ul>
@@ -75,15 +75,58 @@
 <h1>stats<a class="headerlink" href="#stats" title="Permalink to this heading"></a></h1>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;/home/runner/work/solarmon/solarmon/docs/source/../../stats.py&quot;, line 15, in &lt;module&gt;
-    import pandas as pd
-ModuleNotFoundError: No module named &#39;pandas&#39;
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>usage: stats.py [-h] data_file
+
+Read engery data from supplied `.json` file (created using :mod:`energy`
+script) and output various statistics.
+
+positional arguments:
+  data_file   .json file containing energy data
+
+options:
+  -h, --help  show this help message and exit
 </pre></div>
 </div>
 </section>
-<section id="function-descriptions">
-<h2>Function descriptions<a class="headerlink" href="#function-descriptions" title="Permalink to this heading"></a></h2>
+<section id="module-stats">
+<span id="function-descriptions"></span><h2>Function descriptions<a class="headerlink" href="#module-stats" title="Permalink to this heading"></a></h2>
+<p>Script using various <a class="reference external" href="https://en.wikipedia.org/wiki/Descriptive_statistics">descriptive statistical</a> methods for analysing solar
+energy data.</p>
+<p>Script accepts <cite>.json</cite> file, as output by <a class="reference internal" href="energy.html#module-energy" title="energy"><code class="xref py py-mod docutils literal notranslate"><span class="pre">energy</span></code></a> script.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="stats.get_energy_dataframe">
+<span class="sig-prename descclassname"><span class="pre">stats.</span></span><span class="sig-name descname"><span class="pre">get_energy_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">pandas.DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/Albo-code/solarmon/tree/main/stats.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#stats.get_energy_dataframe" title="Permalink to this definition"></a></dt>
+<dd><p>From the given <code class="docutils literal notranslate"><span class="pre">energy</span></code> pandas dataframe extract the <code class="docutils literal notranslate"><span class="pre">timeUnit</span></code>,
+<code class="docutils literal notranslate"><span class="pre">unit</span></code> and <code class="docutils literal notranslate"><span class="pre">values</span></code> data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Tuple containing 3 items:
+[1] Pandas dataframe containing the energy values,
+[2] Time unit of the energy data,
+[3] Energy value units</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Tuple[pd.DataFrame, str, str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="stats.time_unit_stats_day">
+<span class="sig-prename descclassname"><span class="pre">stats.</span></span><span class="sig-name descname"><span class="pre">time_unit_stats_day</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/Albo-code/solarmon/tree/main/stats.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#stats.time_unit_stats_day" title="Permalink to this definition"></a></dt>
+<dd><p>Display various statistics relevant when energy data collected using
+<code class="docutils literal notranslate"><span class="pre">TimeUnit</span></code> of <code class="docutils literal notranslate"><span class="pre">DAY</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – DataFrame containing energy data values.</p></li>
+<li><p><strong>time_unit</strong> (<em>str</em>) – The time unit of the energy data.</p></li>
+<li><p><strong>energy_unit</strong> (<em>str</em>) – The unit of the energy data.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 </section>
 
@@ -98,7 +141,7 @@ ModuleNotFoundError: No module named &#39;pandas&#39;
 
   <div role="contentinfo">
     <p>&#169; Copyright 2022, Albo-code.
-      <span class="lastupdated">Last updated on Wednesday 31 Aug 2022 at 21:17:31.
+      <span class="lastupdated">Last updated on Wednesday 31 Aug 2022 at 21:23:57.
       </span></p>
   </div>
 
