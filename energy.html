@@ -19,6 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="stats" href="stats.html" />
     <link rel="prev" title="solarmon documentation" href="index.html" /> 
 </head>
 
@@ -39,7 +40,12 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Scripts:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">energy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">energy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-energy">Function descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">stats</a></li>
 </ul>
 
         </div>
@@ -66,19 +72,56 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-energy">
-<span id="energy"></span><h1>energy<a class="headerlink" href="#module-energy" title="Permalink to this heading"></a></h1>
-<p>Use the SolarEdge Monitoring API <code class="docutils literal notranslate"><span class="pre">energy</span></code> command to get engery generation data.</p>
+  <section id="energy">
+<h1>energy<a class="headerlink" href="#energy" title="Permalink to this heading"></a></h1>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;/home/runner/work/solarmon/solarmon/docs/source/../../energy.py&quot;, line 10, in &lt;module&gt;
+    import plac
+ModuleNotFoundError: No module named &#39;plac&#39;
+</pre></div>
+</div>
+</section>
+<section id="module-energy">
+<span id="function-descriptions"></span><h2>Function descriptions<a class="headerlink" href="#module-energy" title="Permalink to this heading"></a></h2>
+<p>Use the SolarEdge Monitoring API <code class="docutils literal notranslate"><span class="pre">energy</span></code> command to get energy generation data.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="energy.get_energy_data">
-<span class="sig-prename descclassname"><span class="pre">energy.</span></span><span class="sig-name descname"><span class="pre">get_energy_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_unit</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Albo-code/solarmon/tree/main/energy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#energy.get_energy_data" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">energy.</span></span><span class="sig-name descname"><span class="pre">get_energy_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_unit</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/Albo-code/solarmon/tree/main/energy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#energy.get_energy_data" title="Permalink to this definition"></a></dt>
+<dd><p>Get energy data from the SolarEdge server using Python <cite>requests</cite> call to
+send the SolarEdge API <cite>energy</cite> command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>site_id</strong> (<em>str</em>) – Value of <em>site id</em> to be used in server request.</p></li>
+<li><p><strong>api_key</strong> (<em>str</em>) – Value of <em>api key</em> to be used in server request.</p></li>
+<li><p><strong>start_date</strong> (<em>str</em>) – Value of <cite>energy</cite> command’s <em>start date</em>.</p></li>
+<li><p><strong>end_date</strong> (<em>str</em>) – Value of <cite>energy</cite> command’s <em>end date</em>.</p></li>
+<li><p><strong>time_unit</strong> (<em>str</em>) – Value of <cite>energy</cite> command’s <em>time unit</em>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="energy.load_site_api_data">
 <span class="sig-prename descclassname"><span class="pre">energy.</span></span><span class="sig-name descname"><span class="pre">load_site_api_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'site_api_key.yaml'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/Albo-code/solarmon/tree/main/energy.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#energy.load_site_api_data" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Load the site information data required in SolarEdge API calls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>str</em>) – Name of <cite>.yaml</cite> file containg site information.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tuple containg <strong>site id</strong> and <strong>api key</strong>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[str, str]</p>
+</dd>
+</dl>
+</dd></dl>
 
+</section>
 </section>
 
 
@@ -86,13 +129,14 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="solarmon documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="stats.html" class="btn btn-neutral float-right" title="stats" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2022, Albo-code.
-      <span class="lastupdated">Last updated on Saturday 20 Aug 2022 at 20:34:44.
+      <span class="lastupdated">Last updated on Wednesday 31 Aug 2022 at 21:17:31.
       </span></p>
   </div>
 

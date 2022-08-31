@@ -40,6 +40,7 @@
               <p class="caption" role="heading"><span class="caption-text">Scripts:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="energy.html">energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">stats</a></li>
 </ul>
 
         </div>
@@ -79,13 +80,23 @@ the Python scripts and build this documentation:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">solarmon_venv</span>
 <span class="n">source</span> <span class="n">solarmon_venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pip</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pylint</span> <span class="o">-</span><span class="n">U</span> <span class="n">plac</span> <span class="o">-</span><span class="n">U</span> <span class="n">pyyaml</span> <span class="o">-</span><span class="n">U</span> <span class="n">sphinx</span> <span class="o">-</span><span class="n">U</span> <span class="n">sphinx_rtd_theme</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pylint</span> <span class="o">-</span><span class="n">U</span> <span class="n">plac</span> <span class="o">-</span><span class="n">U</span> <span class="n">pyyaml</span> <span class="o">-</span><span class="n">U</span> <span class="n">pandas</span> \
+            <span class="o">-</span><span class="n">U</span> <span class="n">sphinx</span> <span class="o">-</span><span class="n">U</span> <span class="n">sphinx_rtd_theme</span> <span class="o">-</span><span class="n">U</span> <span class="n">sphinxcontrib</span><span class="o">-</span><span class="n">programoutput</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Scripts:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="energy.html">energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="energy.html">energy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="energy.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="energy.html#module-energy">Function descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">stats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stats.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stats.html#function-descriptions">Function descriptions</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -109,7 +120,7 @@ the Python scripts and build this documentation:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2022, Albo-code.
-      <span class="lastupdated">Last updated on Saturday 20 Aug 2022 at 20:34:44.
+      <span class="lastupdated">Last updated on Wednesday 31 Aug 2022 at 21:17:31.
       </span></p>
   </div>
 
