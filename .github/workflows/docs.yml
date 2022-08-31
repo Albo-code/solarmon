@@ -20,7 +20,7 @@ jobs:
 
     - name: Install requirements
       run: |
-        pip3 install pandas plac yaml sphinx-rtd-theme sphinxcontrib-programoutput
+        pip3 install pandas plac PyYAML sphinx-rtd-theme sphinxcontrib-programoutput
 
     - name: Build docs
       run: |
