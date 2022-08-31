@@ -57,7 +57,7 @@ html_last_updated_fmt = '%A %d %b %Y at %H:%M:%S'
 # some external dependencies are not met at build time and break the building
 # process. You may only specify the root package of the dependencies themselves
 # and omit the sub-modules:
-autodoc_mock_imports = ['plac', 'requests', 'yaml']
+autodoc_mock_imports = ['pandas', 'plac', 'requests', 'yaml']
 
 # -- sphinx.ext.linkcode
 # See https://www.sphinx-doc.org/en/master/usage/extensions/linkcode.html
