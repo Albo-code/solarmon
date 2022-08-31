@@ -22,7 +22,8 @@ the Python scripts and build this documentation::
    python3 -m venv solarmon_venv
    source solarmon_venv/bin/activate
    pip install -U pip
-   pip install -U pylint -U plac -U pyyaml -U pandas -U sphinx -U sphinx_rtd_theme
+   pip install -U pylint -U plac -U pyyaml -U pandas \
+               -U sphinx -U sphinx_rtd_theme -U sphinxcontrib-programoutput
 
 
 .. toctree::
